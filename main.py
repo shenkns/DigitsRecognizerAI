@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import torch
+import torch.nn as nn
+import torchvision as tv
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import numpy as np
+import matplotlib.pyplot as plt
+#import cv2
+import os
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+transform = tv.transforms.Compose([
+    tv.transforms.ToTensor()
+])
 
+ds_mnist = tv.datasets.MNIST('./datasets', download=True, transform=transform)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(ds_mnist[0])
