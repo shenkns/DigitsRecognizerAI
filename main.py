@@ -1,10 +1,10 @@
+#%%
 import torch
 import torch.nn as nn
 import torchvision as tv
 
 import numpy as np
 import matplotlib.pyplot as plt
-#import cv2
 import os
 
 
@@ -14,4 +14,6 @@ transform = tv.transforms.Compose([
 
 ds_mnist = tv.datasets.MNIST('./datasets', download=True, transform=transform)
 
-print(ds_mnist[0])
+plt.imshow(ds_mnist[0][0].numpy()[0])
+
+print(ds_mnist)
