@@ -1,1 +1,3 @@
 # Digits Recognizer
+
+MNIST Classifier
